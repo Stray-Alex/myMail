@@ -1,6 +1,8 @@
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from MenuBar import *
 
 
 class MainWindow(QMainWindow):
@@ -9,7 +11,7 @@ class MainWindow(QMainWindow):
         self.resize(760, 650)
         self.setWindowTitle("myMail")
 
-
+        bar = MenuBar(self)
 
 
 if __name__ == "__main__":
