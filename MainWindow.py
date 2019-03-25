@@ -11,6 +11,7 @@ class MainWindow(QMainWindow):
         self.resize(760, 650)
         self.setWindowTitle("myMail")
         self.setWindowIcon(QIcon('source/image/myMailIcon.png'))
+        self.setFont(QFont("ubuntu", 11))  ##设置字体
         bar = MenuBar(self)
 
 

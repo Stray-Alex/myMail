@@ -7,16 +7,20 @@ from PyQt5.QtCore import *
 class MenuBar(QMenuBar):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.resize(1920, 23)
+        self.resize(1920, 28)
+        self.setFont(QFont("ubuntu", 11))  ##设置字体
 
         file = self.addMenu('文件')
         view = self.addMenu('视图')
-        window=self.addMenu("窗口")
+        window = self.addMenu("窗口")
+        tools = self.addMenu("工具")
         help = self.addMenu("帮助")
-        tools=self.addMenu("工具")
 
-
-
+        file.setFont(QFont("ubuntu", 11))
+        view.setFont(QFont("ubuntu", 11))
+        window.setFont(QFont("ubuntu", 11))
+        tools.setFont(QFont("ubuntu", 11))
+        help.setFont(QFont("ubuntu", 11))
 
         # 向QMenu小控件中添加按钮，子菜单
         file.addAction('新建')
@@ -30,6 +34,8 @@ class MenuBar(QMenuBar):
         edit = file.addMenu('编辑')
         edit.addAction('复制')
         edit.addAction('粘贴')
+
+        help.addAction("关于...")
 
         # 添加父菜单下
         quit = QAction('Quit', self)
