@@ -12,6 +12,8 @@ class MenuBar(QMenuBar):
         file = self.addMenu('文件')
         view = self.addMenu('视图')
         window=self.addMenu("窗口")
+        help = self.addMenu("帮助")
+        tools=self.addMenu("工具")
 
 
 

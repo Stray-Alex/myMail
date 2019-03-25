@@ -10,7 +10,7 @@ class MainWindow(QMainWindow):
         super().__init__(parent)
         self.resize(760, 650)
         self.setWindowTitle("myMail")
-
+        self.setWindowIcon(QIcon('source/image/myMailIcon.png'))
         bar = MenuBar(self)
 
 
