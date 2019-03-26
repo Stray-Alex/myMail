@@ -14,6 +14,13 @@ class MainWindow(QMainWindow):
         self.resize(1000, 600)
 
 
+        p = QPalette(self.palette())  # 获得当前的调色板
+        bg_ima=QImage('source/image/backGround.jpeg')
+        brush = QBrush(bg_ima)  # 画刷
+        p.setBrush(QPalette.Background, brush)  # 设置调色板的背景色
+        self.setPalette(p)  # 给窗口设置调色板
+
+
 
         self.setWindowTitle("myMail")
         self.setWindowIcon(QIcon('source/image/myMailIcon.png'))

@@ -8,7 +8,8 @@ class MenuBar(QMenuBar):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.resize(1920, 28)
-        self.setFont(QFont("ubuntu", 11))  ##设置字体
+        self.setFont(QFont("ubuntu", 11))  # 设置字体
+
 
         file = self.addMenu('文件')
         view = self.addMenu('视图')
