@@ -2,17 +2,23 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+from MyButton import *
+from MenuWindow import *
 from MenuBar import *
 
 
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.resize(760, 650)
+        self.resize(1000, 600)
         self.setWindowTitle("myMail")
         self.setWindowIcon(QIcon('source/image/myMailIcon.png'))
         self.setFont(QFont("ubuntu", 11))  ##设置字体
         bar = MenuBar(self)
+
+        self.left_menue_panel = MenuWindow(parent=self)
+        self.left_menue_panel.move(0, 0);
 
 
 if __name__ == "__main__":
