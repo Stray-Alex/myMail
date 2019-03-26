@@ -19,20 +19,23 @@ class MenuWindow(QWidget):
         super().__init__(parent)
         self.resize(300, 1080)
 
+
+
+
         self.new_email_btn = MyButton('source/image/newMail.png',
                                       'source/image/newMail.png',
                                       'source/image/newMail.png', parent=self)
-        self.new_email_btn.move(10, 50)
+        self.new_email_btn.move(10, 30)
 
         self.receive_email_btn = MyButton('source/image/receiveMail.png',
                                           'source/image/receiveMail.png',
                                           'source/image/receiveMail.png', parent=self)
-        self.receive_email_btn.move(10, 110)
+        self.receive_email_btn.move(10, 90)
 
         self.address_list_btn = MyButton('source/image/addressList.png',
                                          'source/image/addressList.png',
                                          'source/image/addressList.png', parent=self)
-        self.address_list_btn.move(10, 170)
+        self.address_list_btn.move(10, 150)
 
 
 if __name__ == '__main__':
