@@ -11,6 +11,7 @@ from PyQt5 import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from MyButton import MyButton
+from NewEmail import *
 import sys
 
 
@@ -33,6 +34,16 @@ class MenuWindow(QWidget):
                                          'source/image/addressList.png',
                                          'source/image/addressList2.png', parent=self)
         self.address_list_btn.move(10, 150)
+
+
+        self.new_email_btn.clicked.connect(self.start_new_email)
+
+
+    def start_new_email(self):
+        self.new_email=NewEmail()
+        self.new_email.show()
+
+
 
 
 if __name__ == '__main__':

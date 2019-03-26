@@ -14,6 +14,8 @@ import sys
 
 
 class MyButton(QLabel):
+    clicked = pyqtSignal()  # QtCore
+
     def __init__(self, *args, parent=None):
         super().__init__(parent)
 
@@ -26,30 +28,31 @@ class MyButton(QLabel):
         self.setFixedSize(self.normalPixmap.size())
 
     def mouseReleaseEvent(self, ev: QtGui.QMouseEvent):
-            if self.enterState == False:
-                self.setPixmap(self.normalPixmap)
-            else:
-                self.setPixmap(self.hoverPixmap)
+        if self.enterState == False:
+            self.setPixmap(self.normalPixmap)
+        else:
+            self.setPixmap(self.hoverPixmap)
 
-            # print("鼠标释放")
-            self.clicked.emit()  # 发射信号
+        # print("鼠标释放")
+        self.clicked.emit()  # 发射信号
 
     def mousePressEvent(self, ev: QtGui.QMouseEvent):
-            self.setPixmap(self.pressPixmap)
-            # print("鼠标按下")
-            pass
+        self.setPixmap(self.pressPixmap)
+        # print("鼠标按下")
+        pass
 
     def enterEvent(self, a0: QtCore.QEvent):
-            self.setPixmap(self.hoverPixmap)
-            self.enterState = True
-            # print("鼠标进入")
-            pass
+        self.setPixmap(self.hoverPixmap)
+        self.enterState = True
+        # print("鼠标进入")
+        pass
 
     def leaveEvent(self, a0: QtCore.QEvent):
-            self.setPixmap(self.normalPixmap)
-            self.enterState = False
-            # print("鼠标离开")
-            pass
+        self.setPixmap(self.normalPixmap)
+        self.enterState = False
+        # print("鼠标离开")
+        pass
+
 
 if __name__ == '__main__':
     import cgitb
